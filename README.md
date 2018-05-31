@@ -1,4 +1,4 @@
-#PLANETARIUM GEOCENTRYCZNE
+# PLANETARIUM GEOCENTRYCZNE
 Program **Planetarium geocentryczne** jest projektem końcowym stacjonarnego kursu bootcamp organizowanego przez firmę 
 _CodersLab_, 
 który odbył się w kwietniu i maju 2018 r. (```Back-end developer: PHP```). Zgodnie z programem kursu skoncentrowałem się na
