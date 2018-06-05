@@ -21,6 +21,9 @@ który odbył się w kwietniu i maju 2018 r. (```Back-end developer: PHP```). Zg
   posiadają inny kolor: ```Księżyc``` jest różowo-biały (dzięki temu nie rzuca się przesadnie w oczy, co jest istotne, gdyż
    zwraca na siebie uwagę niewspółmiernie szybkim ruchem), ```Słońce``` jest żółte, a ```Ceres``` - planeta karłowata - ma 
    szarą barwę, przez co jest mniej wyrazista.
+
+   Oprócz położenie kątowego planety ukazano jej odległość od Ziemi względem maksymalnego i minimalnego.
+   
    
    Planety ustawione są zgodnie z danymi astronomicznymi na określony dzień, w zakresie od 20 lutego 5401 p.n.e. do 
    20 lutego 5400 r. n.e. Uwzględnione jest położenie z północy czasu uniwersalnego.
@@ -53,10 +56,7 @@ który odbył się w kwietniu i maju 2018 r. (```Back-end developer: PHP```). Zg
    funkcji trygonometrycznych do wyznaczania położenia punktu na okręgu oraz zastosowanie elementu _Canvas_ i 
    jego właściwości.
    
-   Projekt zrealizował wszystkie pierwotne założenia, choć na realizację czekają jeszcze pewne koncepcje, np. 
-   różnicowania położenia ciała niebieskiego w zależności od jego aktualnej odległości od Ziemi, co pozwoliłoby 
-   wyraźniej przedstawić m.in. problem retrogradacji - okresowego "cofania się" planet w pozornym ruchu dookoła Ziemi.
-     
+    
   Plik nie został poddany większej refaktoryzacji, zwłaszcza nie oddzielono plików testowych i pomocniczych od 
   programu głównego. Nie powoduje to jednak większych utrudnień, gdyż kod nie jest zbyt obszerny, a wszystkie funkcje
    programu wydają się łatwe do dostrzeżenia.
