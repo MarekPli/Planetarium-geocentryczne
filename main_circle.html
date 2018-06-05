@@ -32,6 +32,12 @@
         this.pos=0;
         this.step = step;
         this.wasClicked = false;
+        this.modifRadius = 0;
+
+        this.modifyRadius = function(dist){
+            // alert($dist);
+            this.modifRadius = 2 * this.radius * dist - this.radius;
+        }
         this.drawPlanet = function (angle=-1) {
             if (angle >= 0) {
                 this.pos = angle;
@@ -113,8 +119,8 @@
         }
 
         this.paintPath = function() {
-            this.x = w/2+ Math.sin(grad2ian(this.pos+270))*(this.interval*step + this.AU);
-            this.y = h/2+ Math.cos(grad2ian(this.pos+270))*(this.interval*step + this.AU);
+            this.x = w/2+ Math.sin(grad2ian(this.pos+270))*(this.interval*step + this.AU + this.modifRadius);
+            this.y = h/2+ Math.cos(grad2ian(this.pos+270))*(this.interval*step + this.AU + this.modifRadius);
 
             this.ctx.beginPath();
             // this.ctx.style = 'red';
@@ -292,7 +298,11 @@ function drawPlanetsBase(put_date = '', namePlanet = '', angle = -1) {
         // arrPlanets = JSON.parse(arrPlanets); // albo parse albo dataType: "json"
         // $('#current_date').attr('html',arrPlanets[0]);
 
-        // arrPlanets zwraca: datę, nr dnia, listę kątów dla planet
+        // arrPlanets zwraca: datę, nr dnia, listę [kątów, arv] dla planet
+        var dateData = arrPlanets.shift(); 
+        var dateDay = arrPlanets.shift(); 
+        var test = arrPlanets.pop();
+
         ctx.clearRect(0,0,w,h);
         ctx.strokeRect(0,0,w,h);
         for (var i = 1; i <= 11; i++) {
@@ -300,18 +310,20 @@ function drawPlanetsBase(put_date = '', namePlanet = '', angle = -1) {
         }
         var fontSize = ctx.font;
         ctx.font ='23px Arial';
-        ctx.fillText(arrPlanets[0],10,60);
+        ctx.fillText(dateData,10,60);
         ctx.font = fontSize;
         if (put_date || angle != -1) {
-            nr_day = arrPlanets[1];
+            nr_day = dateDay;
         }
         // alert(arrPlanets);
-        // pierwszy element zawiera datę, nie planetę
-        for (var i=2; i<=planets.length +1; i++) {
-            planets[i-2].drawPlanet(arrPlanets[i]);
+        for (var i=0; i<planets.length; i++) {
+            var arr = arrPlanets[i];
+            // alert(arr);
+            planets[i].modifyRadius(arr[1]); // radius
+            planets[i].drawPlanet(arr[0]);
         }
         nr_day++;
-        var test = arrPlanets[arrPlanets.length-1];
+        // var test = arrPlanets[arrPlanets.length-1][0];
         if (test.length) { // było 400, 500
             var fontSize = ctx.font;
             ctx.font ='14px Arial';

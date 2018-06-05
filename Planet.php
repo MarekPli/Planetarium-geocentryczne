@@ -182,5 +182,20 @@ class Planet {
         $row = $this->readBDRow();
         return $row['longt'];
     }
+    
+    public function getDistAU() {
+        $row = $this->readBDRow();
+        return $row['distAU'];
+    }
+    public function getDistance(){
+        // $this->min_au;
+        // $this->max_au;
+        // $this->avg_au;
+        
+        $distAU = $this->getDistAU();
+        $dist_X = $this->max_au - $this->min_au;
+        $dist_x = $distAU - $this->min_au;
+        return ($dist_x / $dist_X);
+    }
 };
 

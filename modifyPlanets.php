@@ -5,7 +5,7 @@
  * Date: 20.05.2018
  * Time: 21:33
  */
-//echo 'jestem';
+// echo 'jestem';
 function genetivus($name) {
     if ($name == 'Sun') {
         return "Słońce";
@@ -70,7 +70,11 @@ if (isset($_POST['nr'])) {
             $arrResult[] = $currPlanet->getDate($day_nr);
             $arrResult[] = $day_nr;
         }
-        $arrResult[] = ceil($currPlanet->getLongt($day_nr));
+        $arr = [];
+        $arr[0] = ceil($currPlanet->getLongt($day_nr));
+        $arr[1] = $currPlanet->getDistance();
+        $arrResult[] = $arr;
+
         $currPlanet = null;
     }
     $arrResult[] = $test;
