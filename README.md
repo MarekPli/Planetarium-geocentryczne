@@ -22,8 +22,7 @@ który odbył się w kwietniu i maju 2018 r. (```Back-end developer: PHP```). Zg
    zwraca na siebie uwagę niewspółmiernie szybkim ruchem), ```Słońce``` jest żółte, a ```Ceres``` - planeta karłowata - ma 
    szarą barwę, przez co jest mniej wyrazista.
 
-   Oprócz położenie kątowego planety ukazano jej odległość od Ziemi względem maksymalnego i minimalnego.
-   
+   Oprócz położenie kątowego planety ukazano jej odległość od Ziemi. W położeniu bliskim maksymalnemu lub minimalnego planeta dotyka tylko koła orbitalnego odpowiednio od zewnątrz lub od wewnątrz.
    
    Planety ustawione są zgodnie z danymi astronomicznymi na określony dzień, w zakresie od 20 lutego 5401 p.n.e. do 
    20 lutego 5400 r. n.e. Uwzględnione jest położenie z północy czasu uniwersalnego.
